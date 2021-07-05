@@ -27,7 +27,7 @@ clicker.addEventListener('click', function handleGenBtnClick() {
             feelings: feelings.value
         })
         )
-    // .then(updateUI())
+    // .then(updateUI()) moved it insed the const postData
     }
 })
 
