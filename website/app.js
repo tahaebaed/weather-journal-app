@@ -26,7 +26,8 @@ clicker.addEventListener('click', function handleGenBtnClick() {
             date: newDate,
             feelings: feelings.value
         })
-        ).then(updateUI())
+        )
+    // .then(updateUI())
     }
 })
 
@@ -56,7 +57,7 @@ const postData = async (url = '/insertData', data = {}) => {
             "Content-Type": "application/json"
         },
         body: JSON.stringify(data)
-    });
+    }).then(updateUI());
     try {
         return;
     } catch (error) {
