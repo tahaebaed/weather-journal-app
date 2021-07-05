@@ -33,7 +33,7 @@ clicker.addEventListener('click', function handleGenBtnClick() {
 /* ------------------------------------------------------------------------------------------------------*/
 /*--------------------------- get data with the Async func with the api ur ------------------------------*/
 
-const apiUrl = `https: //api.openweathermap.org/data/2.5/weather?zip=`;
+const apiUrl = `https://api.openweathermap.org/data/2.5/weather?zip=`;
 
 const getData = async () => {
     const request = await fetch(`${apiUrl}${zipCode.value}${apiKey}`); // gettting the data from the api
