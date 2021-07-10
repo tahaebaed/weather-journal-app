@@ -39,6 +39,7 @@ const apiUrl = `http://api.openweathermap.org/data/2.5/weather?zip=`;
 const getData = async () => {
     const request = await fetch(`${apiUrl}${zipCode.value}${apiKey}`); // gettting the data from the api
     try {
+        console.log(request);
         return await request.json();
     } catch (error) {
         console.log('we cant get data', error);
@@ -58,6 +59,7 @@ const postData = async (url = '/insertData', data = {}) => {
         },
         body: JSON.stringify(data)
     }).then(updateUI());
+    console.log('post succ')
     try {
         return;
     } catch (error) {
@@ -74,6 +76,7 @@ const selectContent = document.getElementById('content');
 
 const updateUI = async () => {
     const request = await fetch('/allData');
+    console.log('update succ')
     try {
         const allData = await request.json()
         selectDate.innerHTML = `today is: ${allData.date}`;
